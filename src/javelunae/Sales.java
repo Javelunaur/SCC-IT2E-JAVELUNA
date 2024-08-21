@@ -32,7 +32,7 @@ public class Sales {
         System.out.printf("Total Due: %.2f",tot);
         System.out.printf("\nCash: %.2f",cash);
         System.out.println("\n-----------------------");
-        System.out.printf("Change: %.2f", cash-tot);
+        System.out.printf("Change: %.2f\n", cash-tot);
         
 }
 }
