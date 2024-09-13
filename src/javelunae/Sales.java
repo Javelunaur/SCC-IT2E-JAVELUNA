@@ -4,23 +4,22 @@ package javelunae;
 import java.util.Scanner;
 
 public class Sales {
-         public void getSales(){
+    
+       String nm, pr;
+       float quan, price, cash;
+        
+       public void addSels(String nm, String pr, float quan, float price, float cash){
+           this.nm = nm;
+           this.pr = pr;
+           this.quan = quan;
+           this.price = price;
+           this.cash = cash; 
+       }
+    
+         public void viewSels(){
         Scanner n = new Scanner(System.in);
-           
-        String nm, pr;
-        float quan, price, cash, tot;
-        
-        System.out.print("Enter Customer Name: ");
-        nm=n.nextLine();
-        System.out.print("Enter Product Name: ");
-        pr=n.nextLine();
-        System.out.print("Enter Quantity: ");
-        quan = n.nextFloat();
-        System.out.print("Enter Price: ");
-        price = n.nextFloat();
-        System.out.print("Enter Cash: ");
-        cash = n.nextFloat();
-        
+          
+        float tot;
         tot = price * quan;
         
         System.out.print("-----------------------\n *** RECEIPT ***");
@@ -32,7 +31,6 @@ public class Sales {
         System.out.printf("Total Due: %.2f",tot);
         System.out.printf("\nCash: %.2f",cash);
         System.out.println("\n-----------------------");
-        System.out.printf("Change: %.2f\n", cash-tot);
-        
+        System.out.printf("Change: %.2f\n", cash-tot);        
 }
 }

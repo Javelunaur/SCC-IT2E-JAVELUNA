@@ -17,8 +17,9 @@ public class Products {
     public void viewp(){
         double profit = this.pr * this.sol;
         double tep = this.st * this.pr;
-        String stat =(this.st > 0)? "Availale" : "Out-of-Stocks";
+        double oha = this.st - this.sol;
+        String stat =(oha > 0)? "Availale" : "Out-of-Stocks";
         
-        System.out.printf("%-10d %-10s %-10.2f %-10.2f %-10.2f %-10.2f %-10.2f %-10s\n", this.pid, this.item, this.pr, this.st, this.sol, profit, tep, stat );
+        System.out.printf("%-10d %-10s %-10.2f %-10.2f %-10.2f %-10.2f %-20.2f %-10s\n", this.pid, this.item, this.pr, this.st, this.sol, profit, tep, stat );
     }
 }
