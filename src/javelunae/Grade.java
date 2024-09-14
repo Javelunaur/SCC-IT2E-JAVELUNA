@@ -28,9 +28,8 @@ public class Grade {
          grr[i] = new Grades();
          grr[i].addGrades(id, name, pre, mid, pf, f);         
      }
-     double ave = 0;
-     double Oave = 0;
-     double Fave = 0;
+        
+     double ave = 0, Oave = 0;
      for (int i = 0; i < st; i++){
          ave += ((grr[i].p + grr[i].m + grr[i].pf + grr[i].f)/4);
          Oave = ave / st;
@@ -38,8 +37,7 @@ public class Grade {
      
       System.out.printf("%-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s\n",
              "ID", "Name", "Prelim","Midterm","Pre-Final","Final","average","remarks");
-     
-     // 
+    
      int passed = 0, failed = 0;
      for (int i = 0; i < st; i++){
          if (((grr[i].p + grr[i].m + grr[i].pf + grr[i].f)/4) > 3.0) {
