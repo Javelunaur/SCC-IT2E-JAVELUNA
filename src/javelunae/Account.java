@@ -1,54 +1,53 @@
 
 package javelunae;
 
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Account {
-         Scanner sc = new Scanner(System.in);
-    Accounts[] acs = new Accounts[100];
+         Scanner in = new Scanner(System.in);
+    Accounts[] acc = new Accounts[100];
     
-    int anum;
+    int n;
     String id, fname, lname, email, password, user;
     
     public void inputAcc(){
         
-        System.out.println("Account Information System\n");
         System.out.print("Enter number of accounts: ");
-        anum = sc.nextInt();
+        n = in.nextInt();
         
-        for(int i = 0; i < anum; i++){
-            System.out.println("Enter details of user "+(i+1)+":\n");
+        for(int i = 0; i < n; i++){
+            System.out.println("\nEnter details of user "+(i+1)+":\n");
             System.out.print("ID: ");
-            id = sc.next();
+            id = in.next();
             
             while(validateID(id)){
-                id = sc.next();
+                id = in.next();
             }
             
-            while(duplicateID(id,anum)){
-                id = sc.next();
+            while(duplicateID(id, n)){
+                id = in.next();
             }
             
             System.out.print("First name: ");
-            fname = sc.next();
+            fname = in.next();
             System.out.print("Last name: ");
-            lname = sc.next();
+            lname = in.next();
             System.out.print("Email: ");
-            email = sc.next();
+            email = in.next();
             System.out.print("Username: ");
-            user = sc.next();
+            user = in.next();
             System.out.print("Password: ");
-            password = sc.next();
+            password = in.next();
             
-            acs[i] = new Accounts();
-            acs[i].processAccounts(id, fname, lname, email, user, password);
+            acc[i] = new Accounts();
+            acc[i].processAccounts(id, fname, lname, email, user, password);
         }
         
         System.out.printf("\n\n%-5s %-10s %-10s %-20s %-10s %-10s\n","ID", "First Name", "Last Name", "Email", "Username", "Password");
          
-        for(int i = 0; i < anum; i++){
-            acs[i].viewAccounts();
+        for(int i = 0; i < n; i++){
+            acc[i].viewAccounts();
         }
     }
     
@@ -64,7 +63,7 @@ public class Account {
     
     public boolean duplicateID(String getID, int max){
         for(int i = 0; i < max; i++){
-            if(acs[i] != null && getID.equals(acs[i].id)){
+            if(acc[i] != null && getID.equals(acc[i].id)){
                 System.out.print("Input invalid: Must not have a duplicated ID, try again: ");
                 return true;
             }
